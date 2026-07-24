@@ -1,26 +1,29 @@
 import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '',
-        'PORT': '',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ROOT_URLCONF = 'project.urls'
 
 ALLOWED_HOSTS = ['*']
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
@@ -31,7 +34,6 @@ TEMPLATES = [
     },
 ]
 
-
 USE_L10N = True
 
 LANGUAGE_CODE = 'ru-ru'
@@ -41,3 +43,4 @@ TIME_ZONE = 'Europe/Moscow'
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+

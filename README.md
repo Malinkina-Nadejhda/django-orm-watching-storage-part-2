@@ -31,7 +31,7 @@ pip install -r requirements.txt
 В терминале выполните команду:
 
 ```bash
-python manage.py runserver 127.0.0.1:800
+python manage.py runserver 127.0.0.1:8000
 ```
 
 После успешного запуска откройте любой браузер и перейдите по локальному адресу:

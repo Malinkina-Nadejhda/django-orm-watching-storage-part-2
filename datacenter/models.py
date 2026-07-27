@@ -51,7 +51,7 @@ def format_duration(duration):
     return formatted_duration
 
 
-def if_visit_long(duration, minutes=60):
+def is_visit_long(duration, minutes=60):
     long_visit = duration > minutes * 60
     return long_visit
 

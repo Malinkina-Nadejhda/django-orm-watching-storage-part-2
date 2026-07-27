@@ -1,6 +1,6 @@
-from datacenter.models import Visit, get_duration, format_duration
+from datacenter.models import Visit
 from django.shortcuts import render
-
+from time_helpers import get_duration, format_duration
 
 def storage_information_view(request):
     active_visits = Visit.objects.filter(leaved_at__isnull=True)
